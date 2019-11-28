@@ -1,0 +1,74 @@
+
+.page-hero {
+    margin: 60px 0 220px;
+    background: transparent;
+}
+
+.item {
+    .item-image {
+        margin-bottom: 60px;
+    
+        img {
+            width: 100%;
+        }
+    }
+    
+    .item-descr {
+        h3 {
+            color: #787878;
+        }
+
+        h1+* {
+            margin-top: 16px;
+        }
+    }
+}
+
+[data-section='page-arts-exhibitions'], [data-section='page-atelier-studio'] {
+    margin: 220px 0;
+
+    .item-img {
+        margin-bottom: 32px;
+    }
+}
+
+[data-section='page-bio'] {
+    h2 {
+        font-size: 42px;
+    }
+
+    p, .link {
+        font-size: 28px;
+        line-height: 44px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 6%;
+    }
+
+    .str-r {
+        width: calc(100% + 6vw);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 10%;
+    }
+
+    .str-r {
+        width: calc(100% + 10vw);
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        padding: 0 13.7%;
+    }
+
+    .str-r {
+        width: calc(100% + 13.7vw);
+    }
+}
