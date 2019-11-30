@@ -86,10 +86,6 @@ b, strong {font-weight: 600;}
     font-weight: 400;
 }
 
-[class*='col']:not(.flex-col, .mx-auto) {
-    // margin-left: 100px;
-}
-
 .col-4, .col-6 {
     flex: 1;
 }
@@ -189,10 +185,14 @@ b, strong {font-weight: 600;}
 .row {
     display: flex;
     flex-direction: row;
-    margin-left: -100px;
+    // margin-left: -100px;
 
-    &> div {
+    &> [class*='col']:not(.str-l) {
         margin-left: 100px;
+
+        &:first-child {
+            margin-left: 0px;
+        }
     }
 }
 
@@ -236,7 +236,7 @@ b, strong {font-weight: 600;}
 }
 
 .arts-grid {
-    margin-left: -100px;
+    // margin-left: -100px;
 
     &> div.col-4 {
         flex: 1;

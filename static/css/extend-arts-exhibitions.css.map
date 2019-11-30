@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "CAAA,AAAA,AACI,SADH,CAAU,4BAA4B,AAAtC,IACM,GAAG,AAAA,YAAY,CAAC,CAAC,CAAA;EAChB,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "extend-arts-exhibitions.scss"
+    ],
+    "names": [],
+    "file": "extend-arts-exhibitions.css"
+}

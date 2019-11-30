@@ -219,11 +219,14 @@ b, strong {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-left: -100px;
 }
 
-.row > div {
+.row > [class*='col']:not(.str-l) {
   margin-left: 100px;
+}
+
+.row > [class*='col']:not(.str-l):first-child {
+  margin-left: 0px;
 }
 
 .flex-col {
@@ -299,10 +302,6 @@ b, strong {
 .big {
   font-size: 28px;
   line-height: 44px;
-}
-
-.arts-grid {
-  margin-left: -100px;
 }
 
 .arts-grid > div.col-4 {
