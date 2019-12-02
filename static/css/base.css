@@ -173,6 +173,10 @@ b, strong {
   margin: 0 auto;
 }
 
+[data-item='atelier-studio-items'] .arts-grid.row {
+  margin-bottom: 120px;
+}
+
 .video iframe {
   width: calc(100% - 60px);
   height: 98vh;
