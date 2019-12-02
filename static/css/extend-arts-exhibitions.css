@@ -1,4 +1,34 @@
+[data-item='page-arts-exhibitions-item'] {
+  margin: 60px 0;
+}
+
 [data-item='page-arts-exhibitions-item'] > div:first-child * {
   text-align: right;
+}
+
+[data-item='page-arts-exhibitions-item'] > div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-x: scroll;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+[data-item='page-arts-exhibitions-item'] > div:nth-child(2)::-webkit-scrollbar {
+  display: none;
+}
+
+[data-item='page-arts-exhibitions-item'] > div:nth-child(2) img {
+  width: 100px;
+  margin-right: 40px;
 }
 /*# sourceMappingURL=extend-arts-exhibitions.css.map */
