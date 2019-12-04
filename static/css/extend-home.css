@@ -36,30 +36,4 @@
   line-height: 44px;
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 6%;
-  }
-  .str-r {
-    width: calc(100% + 6vw);
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 10%;
-  }
-  .str-r {
-    width: calc(100% + 10vw);
-  }
-}
-
-@media (min-width: 1440px) {
-  .container {
-    padding: 0 13.7%;
-  }
-  .str-r {
-    width: calc(100% + 13.7vw);
-  }
-}
 /*# sourceMappingURL=extend-home.css.map */

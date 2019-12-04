@@ -1,6 +1,7 @@
 :root {
   --gutter: 0px;
   --accent-main: #003cff;
+  --accent-1: #787878;
   --font-main: "Moderat","Roboto","Segoe UI",Helvetica,Arial,sans-serif;
 }
 
@@ -30,12 +31,20 @@ body {
   font-weight: 300;
 }
 
+a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none;
+}
+
 a:link, a:visited {
   color: #000;
   font-weight: 400;
 }
 
 a:hover {
+  color: var(--accent-main);
   border-bottom: 2px solid var(--accent-main);
 }
 
@@ -133,6 +142,19 @@ b, strong {
   margin-bottom: 0;
 }
 
+[data-section="page-detail"] li {
+  margin-left: 24px;
+}
+
+.logo {
+  width: 117.6px;
+}
+
+.logo a, .logo a:hover {
+  text-decoration: none;
+  border: none;
+}
+
 [data-item='quote'] {
   width: 85%;
   margin-left: auto;
@@ -173,8 +195,20 @@ b, strong {
   margin: 0 auto;
 }
 
-[data-item='atelier-studio-items'] .arts-grid.row {
+[data-item='atelier-studio-items'] .arts-grid.row, [data-item='press-release-items'] .arts-grid.row, [data-item='in-the-press-items'] .arts-grid.row, [data-item='page-grid'] .arts-grid.row {
   margin-bottom: 120px;
+}
+
+[data-item='page-grid'] {
+  margin-bottom: 120px;
+}
+
+.arts-grid.row .item a.link {
+  border-bottom: 2px solid black;
+}
+
+.arts-grid.row .item a.link:hover {
+  border-bottom-color: var(--accent-main);
 }
 
 .video iframe {
@@ -215,7 +249,7 @@ b, strong {
   margin: 0 auto;
 }
 
-.row {
+.row, .row.grid-big {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,11 +259,7 @@ b, strong {
           flex-direction: row;
 }
 
-.row > [class*='col']:not(.str-l) {
-  margin-left: 100px;
-}
-
-.row > [class*='col']:not(.str-l):first-child {
+.row > [class*='col']:not(.str-l):first-child, .row.grid-big > [class*='col']:not(.str-l):first-child {
   margin-left: 0px;
 }
 
@@ -315,6 +345,26 @@ b, strong {
   margin-left: 100px;
 }
 
+.arts-grid-wrapper {
+  position: relative;
+}
+
+.view-all {
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.view-all a + h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.view-all a {
+  color: var(--accent-main);
+  text-decoration: none;
+}
+
 .page-wrapper {
   min-height: 100vh;
   padding-bottom: 40px;
@@ -335,6 +385,11 @@ nav.main-nav ul > li {
 
 nav.main-nav ul > li a {
   text-decoration: none;
+}
+
+nav.main-nav ul > li a.curent {
+  color: var(--accent-main);
+  border-bottom: 2px solid var(--accent-main);
 }
 
 footer.page-footer {
@@ -441,17 +496,9 @@ footer.page-footer .footer-instagram h2 {
   margin-top: 0;
 }
 
-footer.page-footer .footer-instagram .instagram-feed .feed-item {
-  height: 175px;
-  width: 175px;
-  margin: 2px 2px 2px 0px;
-}
-
-footer.page-footer .footer-instagram .instagram-feed .feed-item img {
+footer.page-footer .footer-instagram img.feed-item {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 footer.page-footer .footer-legal {
@@ -476,7 +523,19 @@ a#toTop {
   padding: 5px 10px;
 }
 
+@media (max-width: 768px) {
+  .arts-grid.row .item {
+    margin-bottom: 60px;
+  }
+  .view-all {
+    padding: 0 5%;
+  }
+}
+
 @media (min-width: 768px) {
+  .container, .view-all {
+    padding: 0 6%;
+  }
   .str-l {
     width: calc(100% + 6vw);
     margin-left: -6vw;
@@ -484,9 +543,15 @@ a#toTop {
   .str-r {
     width: calc(100% + 6vw);
   }
+  .row.grid-big > [class*='col']:not(.str-l) {
+    margin-left: 100px;
+  }
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: 0 10%;
+  }
   h1 {
     font-size: 42px;
   }
@@ -497,9 +562,27 @@ a#toTop {
   .str-r {
     width: calc(100% + 10vw);
   }
+  [class*='col'] {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .view-all {
+    margin-left: -100px;
+    margin-bottom: 0px;
+    position: absolute;
+    top: 50%;
+    z-index: 99999;
+    text-align: center;
+    -webkit-transform: translateX(0) translateY(-50%) rotate(-90deg);
+            transform: translateX(0) translateY(-50%) rotate(-90deg);
+  }
 }
 
 @media (min-width: 1440px) {
+  .container {
+    padding: 0 13.7%;
+  }
   .str-l {
     width: calc(100% + 13.7vw);
     margin-left: -13.7vw;

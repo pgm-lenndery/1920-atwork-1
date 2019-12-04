@@ -2,6 +2,7 @@
     --gutter: 0px;
     
     --accent-main: #003cff;
+    --accent-1: #787878;
 
     --font-main: "Moderat","Roboto","Segoe UI",Helvetica,Arial,sans-serif;
 }
@@ -29,12 +30,15 @@ body {
 }
 
 a {
+    width: fit-content;
+
     &:link, &:visited {
         color: #000;
         font-weight: 400;
     }
 
     &:hover {
+        color: var(--accent-main);
         border-bottom: 2px solid var(--accent-main);
     }
 
@@ -44,8 +48,9 @@ a {
         text-decoration: none;
         border-bottom: none;
     }
-}
 
+    text-decoration: none;
+}
 
 img {
     width: 100%;
@@ -121,9 +126,22 @@ b, strong {font-weight: 600;}
             margin-bottom: 0;
         }
     }
+
+    li {
+        margin-left: 24px;
+    }
 }
 
 ///////////////////////////////////////////////
+
+.logo {
+    width: 117.6px;
+
+    a, a:hover {
+        text-decoration: none;
+        border: none;
+    }
+}
 
 [data-item='quote'] {
     width: 85%;
@@ -161,9 +179,25 @@ b, strong {font-weight: 600;}
     margin: 0 auto;
 }
 
-[data-item='atelier-studio-items'] {
+[data-item='atelier-studio-items'], [data-item='press-release-items'], [data-item='in-the-press-items'], [data-item='page-grid'] {
     .arts-grid.row {
         margin-bottom: 120px;
+    }
+}
+
+[data-item='page-grid'] {
+    margin-bottom: 120px;
+}
+
+.arts-grid.row {
+    .item {
+        a.link {
+            border-bottom: 2px solid black;
+
+            &:hover {
+                border-bottom-color: var(--accent-main);
+            }
+        }
     }
 }
 
@@ -187,14 +221,12 @@ b, strong {font-weight: 600;}
 .ml-n100 {margin-left: -100px;}
 .mx-auto {margin: 0 auto}
 
-.row {
+.row, .row.grid-big {
     display: flex;
     flex-direction: row;
     // margin-left: -100px;
 
     &> [class*='col']:not(.str-l) {
-        margin-left: 100px;
-
         &:first-child {
             margin-left: 0px;
         }
@@ -248,7 +280,26 @@ b, strong {font-weight: 600;}
         margin-left: 100px;
     }
 }
+
+.arts-grid-wrapper {
+    position: relative;
+}
 ////////////////////////////////////////////////////////////////////////
+.view-all {
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 40px;
+
+    a + h2 {
+        text-align: center;
+        margin: 0;
+    }
+
+    a {
+        color: var(--accent-main);
+        text-decoration: none;
+    }
+}
 
 .page-wrapper {
     min-height: 100vh;
@@ -270,6 +321,11 @@ nav.main-nav {
 
         a {
             text-decoration: none;
+
+            &.curent {
+                color: var(--accent-main);
+                border-bottom: 2px solid var(--accent-main);
+            }
         }
     }
 }
@@ -359,18 +415,9 @@ footer.page-footer {
             margin-top: 0;
         }
 
-        .instagram-feed {
-            .feed-item {
-                height: 175px;
-                width: 175px;
-                margin: 2px 2px 2px 0px;
-
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
+        img.feed-item {
+            height: 100%;
+            width: 100%;
         }
     }
 
@@ -400,7 +447,23 @@ a#toTop {
     @extend .simple;
 }
 
+@media (max-width: 768px) {
+    .arts-grid.row {
+        .item {
+            margin-bottom: 60px;
+        }
+    }
+
+    .view-all {
+        padding: 0 5%;
+    }
+}
+
 @media (min-width: 768px) {
+    .container, .view-all {
+        padding: 0 6%;
+    }
+
     .str-l {
         width: calc(100% + 6vw);
         margin-left: -6vw;
@@ -409,9 +472,19 @@ a#toTop {
     .str-r {
         width: calc(100% + 6vw);
     }
+
+    .row.grid-big{
+        &> [class*='col']:not(.str-l) {
+            margin-left: 100px;
+        }
+    }
 }
 
 @media (min-width: 1024px) {
+    .container {
+        padding: 0 10%;
+    }
+
     h1 {font-size: 42px;    }
 
     .str-l {
@@ -420,9 +493,28 @@ a#toTop {
     }
 
     .str-r {width: calc(100% + 10vw);    }
+
+
+    [class*='col'] {
+        flex: 1;
+    }
+
+    .view-all {
+        margin-left: -100px;
+        margin-bottom: 0px;
+        position: absolute;
+        top: 50%;
+        z-index: 99999;
+        text-align: center;
+        transform: translateX(0) translateY(-50%) rotate(-90deg);
+    }
 }
 
 @media (min-width: 1440px) {
+    .container {
+        padding: 0 13.7%;
+    }
+
     .str-l {
         width: calc(100% + 13.7vw);
         margin-left: -13.7vw;

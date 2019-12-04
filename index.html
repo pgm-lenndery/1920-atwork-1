@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Arne Quinze</title>
     <link rel="icon" type="image/png" href="./favicon-196x196.png" />
 
     <link rel="stylesheet" href="./static/css/main.css">
@@ -13,8 +13,8 @@
 <body>
     <div class="page-wrapper">
         <header class="page-header">
-            <div class="container row">
-                <nav class="col-6 main-nav">
+            <div class="container row align-items-center">
+                <nav class="col-8 main-nav">
                     <ul>
                         <li>
                             <a href="/art-and-exhibitions"><span>Art & Exhibitions</span></a>
@@ -33,8 +33,10 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="col-6 logo">
-                    Arne Quinze
+                <div class="col-4 logo">
+                    <a href="/">
+                        <img src="../static/images/logo.png" alt="" class="logo">
+                    </a>
                 </div>
             </div>
         </header>
@@ -55,44 +57,12 @@
                 </div>
             </div>
         </section>
-        <section data-section="page-arts-exhibitions">
-            <div class="container">
-                <div class="arts-grid row align-items-center">
-                    <div class="col-4 item">
-                        <div class="item-img">
-                            <img src="./static/images/home/current-exib-1.gif" alt="">
-                        </div>
-                        <div class="item-descr">
-                            <h3>Installation / Sculpture — Creutz & Partners, Luxemburg</h3>
-                            <h2>Amazonia — Luxembourg</h2>
-                            <p>“I had the most baffling experiences during some hikes through the jungle. It is nature in its...</p>
-                            <a class="link" href="">Learn more</a>
-                        </div>
-                    </div>
-                    <div class="col-4 item">
-                        <div class="item-img">
-                            <img src="./static/images/home/current-exib-2.gif" alt="">
-                        </div>
-                        <div class="item-descr">
-                            <h3>Documentary — Valencia, Spain</h3>
-                            <h2>In dialogue with Calatrava</h2>
-                            <p>"Since the Industrial Revolution, we humans have managed to cover a big part of our planet with...</p>
-                            <a class="link" href="">Learn more</a>
-                        </div>
-                    </div>
-                    <div class="col-4 item">
-                        <div class="item-img">
-                            <img src="./static/images/home/current-exib-3.jpg" alt="">
-                        </div>
-                        <div class="item-descr">
-                            <h3>Sculpture</h3>
-                            <h2>Arcticus</h2>
-                            <p>'Architecture of nature' would be the best way to describe the delicacy of the Lupines series....</p>
-                            <a class="link" href="">Learn more</a>
-                        </div>
-                    </div>
-                </div>
+        <section class="arts-grid-wrapper" data-section="page-arts-exhibitions">
+            <div class="view-all">
+                <h2>Art & Exhibitions</h2>
+                <a href="/art-and-exhibitions" class="smaller">View all</a>
             </div>
+            <div class="container" data-item="arts-exhibitions-items-home"></div>
         </section>
         <section data-section="page-bio">
             <div class="container">
@@ -116,44 +86,13 @@
                 </div>
             </div>
         </section>
-        <section data-section="page-atelier-studio">
-            <div class="container">
-                <div class="arts-grid row align-items-center">
-                    <div class="col-4 item">
-                        <div class="item-img">
-                            <img src="./static/images/home/atelier-1.jpg" alt="">
-                        </div>
-                        <div class="item-descr">
-                            <h3>Behind the scenes of the workshop</h3>
-                            <h2>Strelitzia construction</h2>
-                            <p>Strelitzia is Latin for the commonly known crane flower, or 'bird of paradise', a plant...</p>
-                            <a class="link" href="">Learn more</a>
-                        </div>
-                    </div>
-                    <div class="col-4 item">
-                        <div class="item-img">
-                            <img src="./static/images/home/atelier-2.gif" alt="">
-                        </div>
-                        <div class="item-descr">
-                            <h3>Creation and installation of a new sculpture in Paris</h3>
-                            <h2>Rough construction video — The Beautiful Dreamer</h2>
-                            <p>Arne Quinze finds it very important to develop our cities in closer relation to nature, and this...</p>
-                            <a class="link" href="">Learn more</a>
-                        </div>
-                    </div>
-                    <div class="col-4 item">
-                        <div class="item-img">
-                            <img src="./static/images/home/atelier-3.jpg" alt="">
-                        </div>
-                        <div class="item-descr">
-                            <h3>Le Beau Rêveur</h3>
-                            <h2>Finishing a public art installation in Paris</h2>
-                            <p>Inspired by an active romanticism, Arne Quinze continues his journey with this public sculpture...</p>
-                            <a class="link" href="">Learn more</a>
-                        </div>
-                    </div>
-                </div>
+
+        <section class="arts-grid-wrapper" data-section="page-atelier-studio">
+            <div class="view-all">
+                <h2>Atelier ‐ Studio</h2>
+                <a href="/atelier-studio" class="smaller">View all</a>
             </div>
+            <div class="container" data-item="atelier-studio-items" data-load-items="3"></div>
         </section>
     </div>
     <footer class="page-footer">
@@ -203,32 +142,15 @@
                     </div>
                 </form>
             </div>
-            <div class="footer-instagram row align-items-center">
-                <div class="col-4 row align-items-center">
-                    <div class="col">
+            <div class="footer-instagram align-items-center">
+                <div class="col-4 row grid-big align-items-center">
+                    <div class="col-2">
                         <h2>Arne<br>Quinze</h2>
                     </div>
-                    <div class="col ml-auto">
+                    <div class="col-3">
                         <h2>
-                            <a class="link simple" href="https://www.instagram.com/arnequinze/" target="_blank">Visit our<br>Instagram</a>
+                            <a class="link simple" href="https://www.instagram.com/arnequinze/" target="_blank">Visit our Instagram</a>
                         </h2>
-                    </div>
-                </div>
-                <div class="instagram-feed row ml-auto">
-                    <div class="feed-item">
-                        <img src="https://f8feeds.be/downloads/instagram/v10/arnequinze/2180751801087479152.jpg" alt="">
-                    </div>
-                    <div class="feed-item">
-                        <img src="https://f8feeds.be/downloads/instagram/v10/arnequinze/2180534779577853589.jpg" alt="">
-                    </div>
-                    <div class="feed-item">
-                        <img src="http://f8feeds.be/downloads/instagram/v10/arnequinze/2180751801087479152.jpg" alt="">
-                    </div>
-                    <div class="feed-item">
-                        <img src="http://f8feeds.be/downloads/instagram/v10/arnequinze/2180751801087479152.jpg" alt="">
-                    </div>
-                    <div class="feed-item">
-                        <img src="http://f8feeds.be/downloads/instagram/v10/arnequinze/2180751801087479152.jpg" alt="">
                     </div>
                 </div>
             </div>
