@@ -506,4 +506,9 @@
     }
 
     app.initialize();
+
+    const btnToTop = document.querySelector('#toTop');
+    btnToTop.addEventListener('click', (() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }))
 })()

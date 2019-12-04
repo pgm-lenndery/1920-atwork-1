@@ -431,7 +431,7 @@ footer.page-footer {
     }
 }
 
-a#toTop {
+div#toTop {
     position: fixed;
     bottom: 50px;
     left: calc(50% - 55px);
@@ -443,6 +443,7 @@ a#toTop {
     border-bottom: 2px solid black;
     background-color: white;
     padding: 5px 10px;
+    cursor: pointer;
 
     @extend .simple;
 }
